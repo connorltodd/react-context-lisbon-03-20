@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserList from './components/Userlist';
+import UserContextComponent from './contexts/UserContext'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 
+        The UserContextComponent is the component holding the state in the context.
+        The components it wraps all have access to that context.
+       */}
+      <UserContextComponent>
+        <UserList />
+      </UserContextComponent>
     </div>
   );
 }
